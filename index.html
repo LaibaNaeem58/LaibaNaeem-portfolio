@@ -8,43 +8,27 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  /* Header + Footer — same */
   --chrome:#4a5568;
-
-  /* HERO — light soft blue-lavender */
   --hero-from:#dde8f8;
   --hero-to:#c8d8f5;
-
-  /* Page backgrounds */
   --bg:#f8faff;
   --bg2:#eef2ff;
-
-  /* Cards / surfaces */
   --card:#ffffff;
   --card2:#f4f7ff;
-
-  /* Borders */
   --brd:#d1d9f0;
   --brd2:#b0bcdf;
-
-  /* Accent blue */
   --blue:#3b5bdb;
   --blue-l:#5c79e8;
   --blue-pale:#eff3ff;
   --blue-pale2:#dbe4ff;
-
-  /* Text */
   --t1:#1e2d4d;
   --t2:#3d4f6e;
   --t3:#7a8aaa;
-
-  /* Accents */
   --green:#059669;
   --teal:#0891b2;
   --amber:#d97706;
   --rose:#e11d48;
   --purple:#7c3aed;
-
   --ff-s:'Playfair Display',Georgia,serif;
   --ff:'Inter',sans-serif;
   --ff-m:'JetBrains Mono',monospace;
@@ -58,9 +42,7 @@ body{font-family:var(--ff);background:var(--bg);color:var(--t1);overflow-x:hidde
 #cr{position:fixed;width:36px;height:36px;border:2px solid rgba(59,91,219,.35);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .2s,height .2s,border-color .2s;}
 body:has(a:hover) #cr,body:has(button:hover) #cr{width:52px;height:52px;border-color:rgba(59,91,219,.75);}
 
-/* ═══════════════════════════
-   HEADER  (same as footer)
-═══════════════════════════ */
+/* HEADER */
 header{
   position:fixed;top:0;left:0;right:0;z-index:700;
   height:70px;display:flex;align-items:center;justify-content:space-between;
@@ -76,42 +58,32 @@ nav a:hover{color:#fff;}
 .nav-cta{padding:10px 24px;background:var(--blue);border-radius:5px;color:#fff!important;font-weight:600;box-shadow:0 2px 10px rgba(59,91,219,.4);transition:background .2s!important;}
 .nav-cta:hover{background:var(--blue-l)!important;}
 
-/* ═══════════════════════════
-   HERO  — LIGHT
-═══════════════════════════ */
+/* HERO */
 .hero{
   min-height:100vh;
   display:grid;grid-template-columns:58% 42%;
   align-items:center;
   padding:0 6%;padding-top:70px;
   position:relative;overflow:hidden;
-  /* LIGHT gradient — periwinkle to sky */
   background:linear-gradient(140deg,#c5d8f8 0%,#d8e8ff 40%,#e8f0ff 70%,#f0f5ff 100%);
 }
-
-/* soft pattern */
 .hero::before{
   content:'';position:absolute;inset:0;pointer-events:none;
   background-image:radial-gradient(rgba(59,91,219,.08) 1.5px,transparent 1.5px);
   background-size:38px 38px;
 }
-/* wave bottom */
 .hero::after{
   content:'';position:absolute;bottom:-2px;left:0;right:0;height:100px;
   background:var(--bg);
   clip-path:ellipse(58% 100% at 50% 100%);
   pointer-events:none;
 }
-
-/* decorative circles */
 .orb{position:absolute;border-radius:50%;pointer-events:none;}
 .o1{width:500px;height:500px;top:-140px;right:-100px;background:radial-gradient(circle,rgba(99,131,255,.18) 0%,transparent 70%);}
 .o2{width:280px;height:280px;bottom:60px;left:42%;background:radial-gradient(circle,rgba(56,189,248,.12) 0%,transparent 70%);}
 .o3{width:200px;height:200px;top:20%;left:2%;background:radial-gradient(circle,rgba(139,92,246,.08) 0%,transparent 70%);}
-
 .h-left{position:relative;z-index:2;}
 
-/* badge */
 .h-badge{
   display:inline-flex;align-items:center;gap:10px;
   background:rgba(255,255,255,.65);
@@ -126,7 +98,6 @@ nav a:hover{color:#fff;}
 .bdot{width:9px;height:9px;background:#10b981;border-radius:50%;box-shadow:0 0 8px #10b981;animation:gp 2s infinite;}
 @keyframes gp{0%,100%{box-shadow:0 0 6px #10b981;}50%{box-shadow:0 0 16px #10b981;}}
 
-/* BIG title */
 .hero h1{
   font-family:var(--ff-s);
   font-size:clamp(56px,6.2vw,96px);
@@ -163,9 +134,7 @@ nav a:hover{color:#fff;}
 }
 .btn-o:hover{background:var(--blue);color:#fff;}
 
-/* right panel cards — light glass */
 .h-right{position:relative;z-index:2;display:flex;flex-direction:column;gap:14px;}
-
 .hc{
   background:rgba(255,255,255,.72);
   border:1.5px solid rgba(59,91,219,.18);
@@ -205,9 +174,7 @@ nav a:hover{color:#fff;}
 .sc-ln{width:50px;height:1px;background:linear-gradient(to right,var(--blue),transparent);animation:scl 2s ease infinite;}
 @keyframes scl{0%,100%{width:28px;opacity:.3;}50%{width:50px;opacity:1;}}
 
-/* ═══════════════════════════
-   SHARED SECTION STYLES
-═══════════════════════════ */
+/* SHARED SECTION STYLES */
 section{padding:110px 6%;position:relative;}
 .ey{
   font-family:var(--ff-m);font-size:.66rem;
@@ -223,18 +190,14 @@ section{padding:110px 6%;position:relative;}
 }
 .sh em{font-style:italic;font-weight:400;color:var(--blue);}
 
-/* ═══════════════════════════
-   SKILLS
-═══════════════════════════ */
+/* SKILLS */
 #skills{background:var(--bg2);}
 #skills::before{content:'{ }';position:absolute;right:4%;top:60px;font-family:var(--ff-m);font-size:130px;color:rgba(59,91,219,.05);pointer-events:none;user-select:none;line-height:1;}
 
 .sk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(226px,1fr));gap:18px;}
-
 .sk{
   background:var(--card);
   border:1.5px solid var(--brd);
-  /* LEFT COLOURED BAR */
   border-left:5px solid var(--blue);
   border-radius:10px;padding:24px 20px;
   transition:transform .3s,box-shadow .3s;
@@ -243,7 +206,6 @@ section{padding:110px 6%;position:relative;}
 .sk:nth-child(3n+2){border-left-color:#0891b2;}
 .sk:nth-child(3n){border-left-color:#059669;}
 .sk:hover{transform:translateY(-5px);box-shadow:0 14px 36px rgba(59,91,219,.12);}
-
 .sk-ico{
   width:42px;height:42px;
   background:var(--blue-pale);border:1.5px solid var(--blue-pale2);
@@ -260,9 +222,7 @@ section{padding:110px 6%;position:relative;}
 }
 .tag:hover{background:var(--blue);color:#fff;border-color:var(--blue);}
 
-/* ═══════════════════════════
-   PROJECTS
-═══════════════════════════ */
+/* PROJECTS */
 #projects{background:var(--bg);}
 .pj-g{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
 
@@ -286,36 +246,36 @@ section{padding:110px 6%;position:relative;}
 .pb7{background:linear-gradient(90deg,#7c3aed,#e11d48);}
 
 /* light pastel thumbnails */
-.pt{width:100%;height:155px;display:flex;align-items:center;justify-content:center;font-size:3rem;}
-.pt1{background:#eff6ff;}
-.pt2{background:#fffbeb;}
-.pt3{background:#ecfdf5;}
-.pt4{background:#fefce8;}
-.pt5{background:#fff1f2;}
-.pt6{background:#f0fdfe;}
-.pt7{background:#f5f3ff;}
+.thumb{width:100%;height:155px;display:flex;align-items:center;justify-content:center;font-size:3rem;}
+.thumb1{background:#eff6ff;}
+.thumb2{background:#fffbeb;}
+.thumb3{background:#ecfdf5;}
+.thumb4{background:#fefce8;}
+.thumb5{background:#fff1f2;}
+.thumb6{background:#f0fdfe;}
+.thumb7{background:#f5f3ff;}
 
 /* big watermark number */
-.pn{position:absolute;top:14px;right:18px;font-family:var(--ff-s);font-size:3.4rem;font-weight:900;color:rgba(59,91,219,.07);line-height:1;pointer-events:none;transition:color .35s;}
-.pc:hover .pn{color:rgba(59,91,219,.15);}
+.proj-num{position:absolute;top:14px;right:18px;font-family:var(--ff-s);font-size:3.4rem;font-weight:900;color:rgba(59,91,219,.07);line-height:1;pointer-events:none;transition:color .35s;}
+.pc:hover .proj-num{color:rgba(59,91,219,.15);}
 
 .pb-body{padding:22px 22px 26px;display:flex;flex-direction:column;flex:1;}
 
+/* PILLS — fixed class names */
 .pills{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:13px;}
 .pill{padding:4px 12px;border-radius:100px;font-family:var(--ff-m);font-size:.6rem;font-weight:500;}
-.pi{background:#eff6ff;border:1.5px solid #bfdbfe;color:#1d4ed8;}
-.pt_{background:#ecfeff;border:1.5px solid #a5f3fc;color:#0e7490;}
-.pr{background:#fff1f2;border:1.5px solid #fecdd3;color:#be123c;}
-.pa{background:#fffbeb;border:1.5px solid #fde68a;color:#92400e;}
-.pg{background:#f0fdf4;border:1.5px solid #bbf7d0;color:#166534;}
-.pn_{background:#f9fafb;border:1.5px solid #e5e7eb;color:#4b5563;}
-.pp{background:#faf5ff;border:1.5px solid #e9d5ff;color:#6d28d9;}
+.pill-blue{background:#eff6ff;border:1.5px solid #bfdbfe;color:#1d4ed8;}
+.pill-teal{background:#ecfeff;border:1.5px solid #a5f3fc;color:#0e7490;}
+.pill-red{background:#fff1f2;border:1.5px solid #fecdd3;color:#be123c;}
+.pill-amber{background:#fffbeb;border:1.5px solid #fde68a;color:#92400e;}
+.pill-green{background:#f0fdf4;border:1.5px solid #bbf7d0;color:#166534;}
+.pill-neutral{background:#f9fafb;border:1.5px solid #e5e7eb;color:#4b5563;}
+.pill-purple{background:#faf5ff;border:1.5px solid #e9d5ff;color:#6d28d9;}
 
 .pc h3{font-family:var(--ff-s);font-size:1.42rem;font-weight:700;color:var(--t1);margin-bottom:9px;line-height:1.2;transition:color .25s;}
 .pc:hover h3{color:var(--blue);}
 .pc p{font-size:.87rem;color:var(--t2);line-height:1.78;font-weight:400;flex:1;margin-bottom:20px;}
 
-/* PROPER BUTTON on each card — clearly visible */
 .plink{
   display:inline-flex;align-items:center;gap:8px;
   padding:10px 22px;
@@ -333,11 +293,9 @@ section{padding:110px 6%;position:relative;}
 .pw-l{padding:36px 38px;}
 .pw-r{padding:28px 36px 28px 0;display:flex;flex-direction:column;justify-content:center;}
 
-/* three info boxes — light, NOT dark */
+/* game info boxes */
 .gbox-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px;}
-.gbox{
-  padding:16px;border-radius:10px;text-align:center;
-}
+.gbox{padding:16px;border-radius:10px;text-align:center;}
 .gb1{background:#eff6ff;border:1.5px solid #bfdbfe;}
 .gb2{background:#ecfdf5;border:1.5px solid #a7f3d0;}
 .gb3{background:#fffbeb;border:1.5px solid #fde68a;}
@@ -359,9 +317,7 @@ section{padding:110px 6%;position:relative;}
 .gbtn:hover{background:var(--blue-l);}
 .gsc{font-family:var(--ff-m);font-size:.75rem;color:var(--t2);font-weight:500;}
 
-/* ═══════════════════════════
-   CONTACT
-═══════════════════════════ */
+/* CONTACT */
 #contact{background:var(--bg2);}
 .ct-g{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;}
 .ct-p{color:var(--t2);font-size:.98rem;line-height:1.9;font-weight:400;margin-bottom:36px;max-width:420px;}
@@ -389,7 +345,6 @@ section{padding:110px 6%;position:relative;}
   box-shadow:0 8px 36px rgba(59,91,219,.08);
 }
 .ct-top{
-  /* contact box top = same chrome as header */
   background:var(--chrome);
   padding:30px 34px;
 }
@@ -417,9 +372,7 @@ section{padding:110px 6%;position:relative;}
 .avdot{width:10px;height:10px;background:#10b981;border-radius:50%;flex-shrink:0;margin-top:4px;box-shadow:0 0 8px #10b981;animation:gp 2s infinite;}
 .avail p{font-size:.88rem;color:var(--t2);line-height:1.6;font-weight:400;}
 
-/* ═══════════════════════════
-   FOOTER  (same as header)
-═══════════════════════════ */
+/* FOOTER */
 footer{
   background:var(--chrome);
   padding:38px 6%;
@@ -451,7 +404,7 @@ footer .logo{color:#fff;}
   </ul></nav>
 </header>
 
-<!-- HERO — LIGHT -->
+<!-- HERO -->
 <section class="hero" id="about">
   <div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
 
@@ -523,10 +476,10 @@ footer .logo{color:#fff;}
 
     <div class="pc reveal">
       <div class="pb pb1"></div>
-      <div class="pt pt1">🍕</div>
-      <span class="pn">01</span>
+      <div class="thumb thumb1">🍕</div>
+      <span class="proj-num">01</span>
       <div class="pb-body">
-        <div class="pills"><span class="pill pi">Django</span><span class="pill pt_">MongoDB</span><span class="pill pn_">Web App</span></div>
+        <div class="pills"><span class="pill pill-blue">Django</span><span class="pill pill-teal">MongoDB</span><span class="pill pill-neutral">Web App</span></div>
         <h3>Food Order System</h3>
         <p>Web-based food ordering platform with dynamic database management, real-time order tracking, and a clean responsive UI built on Django with MongoDB.</p>
         <a href="#" class="plink">View Project <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
@@ -535,10 +488,10 @@ footer .logo{color:#fff;}
 
     <div class="pc reveal">
       <div class="pb pb2"></div>
-      <div class="pt pt2">📦</div>
-      <span class="pn">02</span>
+      <div class="thumb thumb2">📦</div>
+      <span class="proj-num">02</span>
       <div class="pb-body">
-        <div class="pills"><span class="pill pa">C#</span><span class="pill pn_">Windows Forms</span><span class="pill pn_">Desktop</span></div>
+        <div class="pills"><span class="pill pill-amber">C#</span><span class="pill pill-neutral">Windows Forms</span><span class="pill pill-neutral">Desktop</span></div>
         <h3>Inventory Management</h3>
         <p>Complete stock tracking system with admin dashboards, automated reporting logic, and a smooth C# Windows Forms desktop interface for business use.</p>
         <a href="#" class="plink">View Project <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
@@ -547,10 +500,10 @@ footer .logo{color:#fff;}
 
     <div class="pc reveal">
       <div class="pb pb3"></div>
-      <div class="pt pt3">📚</div>
-      <span class="pn">03</span>
+      <div class="thumb thumb3">📚</div>
+      <span class="proj-num">03</span>
       <div class="pb-body">
-        <div class="pills"><span class="pill pg">Linux</span><span class="pill pi">Python</span><span class="pill pn_">Shell Script</span></div>
+        <div class="pills"><span class="pill pill-green">Linux</span><span class="pill pill-blue">Python</span><span class="pill pill-neutral">Shell Script</span></div>
         <h3>Library Automation</h3>
         <p>Automated book circulation and records management using Linux shell scripting and Python — reducing manual overhead through intelligent automation.</p>
         <a href="#" class="plink">View Project <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
@@ -559,10 +512,10 @@ footer .logo{color:#fff;}
 
     <div class="pc reveal">
       <div class="pb pb4"></div>
-      <div class="pt pt4">🛒</div>
-      <span class="pn">04</span>
+      <div class="thumb thumb4">🛒</div>
+      <span class="proj-num">04</span>
       <div class="pb-body">
-        <div class="pills"><span class="pill pa">Kotlin</span><span class="pill pt_">SQLite</span><span class="pill pg">Android</span></div>
+        <div class="pills"><span class="pill pill-amber">Kotlin</span><span class="pill pill-teal">SQLite</span><span class="pill pill-green">Android</span></div>
         <h3>Grocery Android App</h3>
         <p>Native Android app for grocery tracking with local SQLite persistence, Material Design UI, and intuitive category management for daily needs.</p>
         <a href="#" class="plink">View Project <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
@@ -571,65 +524,66 @@ footer .logo{color:#fff;}
 
     <div class="pc reveal">
       <div class="pb pb5"></div>
-      <div class="pt pt5">🌸</div>
-      <span class="pn">05</span>
+      <div class="thumb thumb5">🌸</div>
+      <span class="proj-num">05</span>
       <div class="pb-body">
-        <div class="pills"><span class="pill pa">C#</span><span class="pill pr">AI / ML</span><span class="pill pp">Windows Forms</span></div>
+        <div class="pills"><span class="pill pill-amber">C#</span><span class="pill pill-red">AI / ML</span><span class="pill pill-purple">Windows Forms</span></div>
         <h3>AI Flower Classifier</h3>
         <p>C# Windows Forms application classifying flower species from images using a trained ML model — drag-and-drop input with real-time prediction display.</p>
         <a href="#" class="plink">View Project <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
     </div>
-<div class="pc reveal">
-  <div class="pb pb7"></div>
-  <div class="pt pt7">💻</div>
-  <span class="pn">06</span>
-  <div class="pb-body">
-    <div class="pills">
-      <span class="pill pi">C#</span>
-      <span class="pill pt_">SQLite</span>
-      <span class="pill pn_">Console</span>
-    </div>
-    <h3>Online Shopping System</h3>
-    <p>A robust CLI-based e-commerce engine featuring an Admin Dashboard, product management, and real-time order tracking with SQLite persistence.</p>
-    <a href="#" class="plink">View Project 
-      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2">
-        <path d="M3 8h10M9 4l4 4-4 4"/>
-      </svg>
-    </a>
-  </div>
-</div>
 
-<div class="pc reveal">
-  <div class="pb pb7"></div>
-  <div class="pt pt7">🛍️</div>
-  <span class="pn">07</span>
-  <div class="pb-body">
-    <div class="pills">
-      <span class="pill pi">C#</span>
-      <span class="pill pt_">SQLite</span>
-      <span class="pill pn_">.NET Framework</span>
+    <div class="pc reveal">
+      <div class="pb pb7"></div>
+      <div class="thumb thumb7">💻</div>
+      <span class="proj-num">06</span>
+      <div class="pb-body">
+        <div class="pills">
+          <span class="pill pill-blue">C#</span>
+          <span class="pill pill-teal">SQLite</span>
+          <span class="pill pill-neutral">Console</span>
+        </div>
+        <h3>Online Shopping System</h3>
+        <p>A robust CLI-based e-commerce engine featuring an Admin Dashboard, product management, and real-time order tracking with SQLite persistence.</p>
+        <a href="#" class="plink">View Project
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M3 8h10M9 4l4 4-4 4"/>
+          </svg>
+        </a>
+      </div>
     </div>
-    <h3>Smart Shop Pro</h3>
-    <p>Advanced desktop e-commerce application with a modern UI, secure authentication, and a dynamic catalog for a seamless user shopping experience.</p>
-    <a href="#" class="plink">View Project 
-      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2">
-        <path d="M3 8h10M9 4l4 4-4 4"/>
-      </svg>
-    </a>
-  </div>
-</div>
+
+    <div class="pc reveal">
+      <div class="pb pb7"></div>
+      <div class="thumb thumb7">🛍️</div>
+      <span class="proj-num">07</span>
+      <div class="pb-body">
+        <div class="pills">
+          <span class="pill pill-blue">C#</span>
+          <span class="pill pill-teal">SQLite</span>
+          <span class="pill pill-neutral">.NET Framework</span>
+        </div>
+        <h3>Smart Shop Pro</h3>
+        <p>Advanced desktop e-commerce application with a modern UI, secure authentication, and a dynamic catalog for a seamless user shopping experience.</p>
+        <a href="#" class="plink">View Project
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M3 8h10M9 4l4 4-4 4"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
     <!-- GAME — full width -->
     <div class="pc pc-w reveal">
       <div class="pb pb6" style="grid-column:1/-1;"></div>
       <div class="pw-l">
         <div class="pills" style="margin-bottom:16px;">
-          <span class="pill pt_">VPython</span><span class="pill pn_">3D Game</span><span class="pill pi">Physics Engine</span>
+          <span class="pill pill-teal">VPython</span><span class="pill pill-neutral">3D Game</span><span class="pill pill-blue">Physics Engine</span>
         </div>
         <h3 style="font-size:2rem;margin-bottom:14px;">3D Table Tennis</h3>
         <p style="font-size:.9rem;color:var(--t2);margin-bottom:28px;">A fully interactive 3D table tennis simulation — real-time physics, collision detection, AI opponent, and live scoreboard. Play directly below!</p>
 
-        <!-- 3 LIGHT INFO BOXES -->
         <div class="gbox-row">
           <div class="gbox gb1">
             <div class="gbox-t">Move Paddle</div>
@@ -654,8 +608,8 @@ footer .logo{color:#fff;}
       <div class="pw-r">
         <canvas id="gameCanvas"></canvas>
         <div class="gctl">
-          <button class="gbtn" onclick="startGame()">▶ Start</button>
-          <button class="gbtn" onclick="resetGame()">↺ Reset</button>
+          <button class="gbtn" onclick="startGame()">&#9654; Start</button>
+          <button class="gbtn" onclick="resetGame()">&#8634; Reset</button>
           <span class="gsc" id="scoreDisplay">Player: 0 &nbsp;|&nbsp; CPU: 0</span>
         </div>
       </div>
@@ -749,7 +703,7 @@ document.addEventListener('keyup',e=>{K[e.key]=false;});
 function rb(d=1){const t=T();b.x=t.x+t.w/2;b.y=t.y+t.h/2;b.vx=3.8*d;b.vy=(Math.random()-.5)*4;}
 function startGame(){if(run)return;run=true;ip();rb();gl();}
 function resetGame(){run=false;cancelAnimationFrame(aid);ps=0;cs=0;ip();rb();document.getElementById('scoreDisplay').textContent='Player: 0 | CPU: 0';draw();}
-function usc(){document.getElementById('scoreDisplay').textContent=`Player: ${ps} | CPU: ${cs}`;}
+function usc(){document.getElementById('scoreDisplay').textContent='Player: '+ps+' | CPU: '+cs;}
 function upd(){
   const t=T();
   if((K.ArrowUp||K.w)&&pp.y>t.y)pp.y-=5;
@@ -789,7 +743,7 @@ function draw(){
   ctx.fillText(cs,t.x+t.w*.34,t.y+24);ctx.fillText(ps,t.x+t.w*.66,t.y+24);
 }
 function gl(){if(!run)return;upd();draw();aid=requestAnimationFrame(gl);}
-window.addEventListener('load',()=>{rsz();ip();draw();});
+window.addEventListener('load',()=>{if(cv){rsz();ip();draw();}});
 </script>
 </body>
 </html>
